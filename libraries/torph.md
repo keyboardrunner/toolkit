@@ -23,6 +23,7 @@ Good use cases:
 •	Text changing during a UI transition
 
 **Don’t use Torph when**
+
 •	A simple fade is enough.
 •	Text should slide, scale, or move rather than morph.
 •	The animation is primarily about layout movement rather than changing characters.
