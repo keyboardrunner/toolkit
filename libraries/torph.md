@@ -1,4 +1,5 @@
-Torph
+**Torph**
+
 Purpose
 Torph is a text morphing animation library.
 Use it when text needs to smoothly transform from one word or phrase into another.
@@ -37,6 +38,7 @@ When Torph is selected for a project:
 5.	Keep the animation subtle and purposeful unless the design explicitly requires a stronger effect.
 
 **Official repository**
+
 https://github.com/lochie/torph
 AI instructions
 When the user asks for:
