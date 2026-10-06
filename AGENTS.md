@@ -162,3 +162,42 @@ When completing a task, provide a concise summary:
 - anything the user must configure or do next
 
 Never report a test, integration, installation, deployment, or repository change as successful unless it was confirmed.
+
+
+## Design principles
+
+The `principles/` directory contains reusable design decisions: rules for how interfaces should look and behave. Treat these files as the default design baseline when making UI or interaction decisions.
+
+Before designing or implementing a relevant interface, inspect the applicable principle files in `principles/` rather than relying only on generic conventions.
+
+Current principle areas include:
+- `typography.md` — type scale, fonts, line height, measure/line length, and platform typography rules
+- `spacing-and-layout.md` — spacing, grid, density, alignment, and layout
+- `color.md` — palette roles, contrast, semantic color, and dark mode
+- `motion.md` — durations, easing, interaction motion, and reduced motion
+- `accessibility.md` — accessibility baseline and inclusive interaction requirements
+- `antipatterns.md` — patterns and decisions to avoid, with reasons
+
+### Principle precedence
+
+When guidance conflicts, apply this order:
+1. User request
+2. Active project's own design system
+3. `principles/`
+4. Catalog entries in other toolkit directories
+
+Principles are reusable defaults, not absolute rules. A project-specific design system or explicit user request overrides them.
+
+### Platform rules
+
+General web and landing-page rules live in the relevant principle files. For native platforms:
+- iOS: follow Apple's Human Interface Guidelines
+- Android: follow Material Design 3
+
+Relevant principle files should link to the current official platform guidance. Do not assume a platform rule from memory when the official guidance is available; verify current guidance when it materially affects implementation.
+
+### Using principles with catalog entries
+
+Use `principles/` to decide **how the product should look and behave**. Use entries in directories such as `libraries/`, `components/`, `animations/`, and `patterns/` to decide **which resources or implementation approaches can help achieve that result**.
+
+Do not treat a catalog entry as permission to override a principle. When a library or component conflicts with the active principles, prefer another implementation or explain the trade-off.
