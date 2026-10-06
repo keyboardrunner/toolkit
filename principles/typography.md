@@ -1,6 +1,6 @@
 ---
 title: Typography
-status: draft
+status: active
 applies_to: [web, mobile, landing]
 last_reviewed: 2026-10-06
 sources:
