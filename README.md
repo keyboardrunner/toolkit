@@ -1,38 +1,47 @@
 # toolkit
-My personal toolkit for AI-assisted product design and development.
 
-## Contents
+A curated knowledge base for AI-assisted product design and frontend development.
 
-- `principles/` — design decisions and rules for how interfaces should look and behave
-- `libraries/` — useful external libraries and tools
-- `components/` — UI components and component references
-- `animations/` — animation references and implementations
-- `patterns/` — UX and product patterns
-- `references/` — visual and product references
-- `workflows/` — workflows for AI-assisted development
+The toolkit helps agents find relevant principles, implementation resources, UX patterns, references, and repeatable workflows. It is not a package to install wholesale, and its entries do not replace the active project's code, design system, or official documentation.
+
+## Start here
+
+1. Read [AGENTS.md](AGENTS.md) for the agent workflow and operating rules.
+2. Identify the platform, task, and constraints.
+3. Read only the relevant principle and resource files.
+4. Verify changing technical facts against official sources.
+5. Implement, inspect the result, and validate it using available checks.
+
+## Directory map
+
+- `principles/` — reusable rules for visual design, interaction, accessibility, and content.
+- `libraries/` — external libraries and tools, grouped by category (for example, `icons/` and `animation-libs/`).
+- `components/` — reusable UI components and component references.
+- `patterns/` — repeatable UX and product patterns.
+- `references/` — visual/product references with notes about what to learn from them.
+- `workflows/` — repeatable processes for design, implementation, and review.
+- `evals/` — representative tasks and rubrics for checking whether agent output meets the intended quality bar.
+
+### Animation content
+
+Document third-party animation libraries under `libraries/animation-libs/`. Reserve a top-level `animations/` directory for original, reusable animation recipes or implementation patterns only if such material actually exists. Do not duplicate the same entry in both places.
+
+## Source-of-truth order
+
+When guidance conflicts, use this order:
+
+1. Explicit user requirements.
+2. The active project's design system, architecture, and instructions.
+3. Relevant toolkit principles.
+4. Toolkit catalog entries and examples.
+5. The agent's general defaults.
+
+For technical facts such as package APIs, versions, installation, and licensing, the current official source takes precedence over toolkit notes.
 
 ## Principles
 
-`principles/` holds the toolkit's design decisions: rules for how interfaces should look and behave. Principles are reusable defaults for AI agents, not project-specific implementation details.
+See [principles/README.md](principles/README.md) for the index of current principles and planned topics. Only files that exist in the repository are active references; planned topics are not rules.
 
-Typical principle files include:
+## Quality loop
 
-- `typography.md` — type scale, fonts, line height, measure/line length, and platform typography rules
-- `spacing-and-layout.md` — spacing, grid, density, alignment, and layout rules
-- `color.md` — palette roles, contrast, semantic color, and dark-mode rules
-- `motion.md` — durations, easing, interaction motion, and reduced-motion behavior
-- `accessibility.md` — accessibility baseline and inclusive interaction requirements
-- `antipatterns.md` — patterns and decisions to avoid, with reasons
-
-### Precedence
-
-When rules conflict, use this order:
-
-1. User request
-2. Project's own design system
-3. `principles/`
-4. Catalog entries in other toolkit directories
-
-### Platforms
-
-General web and landing-page rules live in the relevant principle files. For native platforms, follow the platform's official guidance: iOS uses Apple's Human Interface Guidelines; Android uses Material Design 3. Relevant principle files should link to the current official guidance.
+Use the workflow in [workflows/ui-implementation.md](workflows/ui-implementation.md) for UI tasks when the environment supports running the app and inspecting screenshots. Use `evals/` to compare outputs against explicit criteria instead of relying on a vague impression that an agent has improved.
